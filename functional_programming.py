@@ -47,7 +47,29 @@ or : pr("other")
    map(func, lst)
 '''
 
-square = lambda x : x * x
-for x in [1,2,3,4,5]:
-    print(square(x))
-print(map(square, [1,2,3,4,5]))
+square = lambda x: x * x
+for x in [1, 2, 3, 4, 5]:
+    prEint(square(x))
+print(map(square, [1, 2, 3, 4, 5]))
+
+# 替换 while 循环
+
+# 过程式：
+
+
+def echo_IMP():
+    while 1:
+        x = raw_input("IMP --")
+        print x
+        if x is 'quit':
+            break
+echo_IMP()
+
+# 函数式：
+
+
+def monadic_print(x):
+    print(x)
+    return(x)
+ehco_FP = lambda : monadic_print(raw_input("FP --")) is 'quit' or ehco_FP()
+
