@@ -30,6 +30,7 @@ pyenv local 3.5.1
 ```unix
 pyenv shell 3.5.1
 ```
+* shell >> local >> global
 ## Virtualenv
 [Virtualenv](https://virtualenv.pypa.io/en/latest/)是一个可以虚拟化python环境的工具，指定路径产生虚拟环境，配合pyenv使用可很好的实现版本隔离，在同一台电脑上使用不同版本开发python。官方文档请点击上面的蓝色链接。
 ### 安装
@@ -71,4 +72,4 @@ monbgodb一种NoSql数据库。为key-value形式可以理解成Python中的字�
 ### 使用
 * [practice_cerberus](https://github.com/VersionBeathon/Expension/tree/master/prcatice_cerberus)
 每种方法都进行了注释。
- 
+
