@@ -60,7 +60,7 @@ print(map(square, [1, 2, 3, 4, 5]))
 def echo_IMP():
     while 1:
         x = raw_input("IMP --")
-        print x
+        print(x)
         if x is 'quit':
             break
 echo_IMP()
