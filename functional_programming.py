@@ -49,7 +49,7 @@ or : pr("other")
 
 square = lambda x: x * x
 for x in [1, 2, 3, 4, 5]:
-    prEint(square(x))
+    print(square(x))
 print(map(square, [1, 2, 3, 4, 5]))
 
 # 替换 while 循环
