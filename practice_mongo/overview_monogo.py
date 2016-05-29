@@ -1,4 +1,6 @@
+# _*_ coding:utf-8 _*_
 import pymongo
+
 import datetime
 client = pymongo.MongoClient("localhost", 27017)
 db = client.practice
