@@ -9,7 +9,7 @@ foo()
 
 def foo1():
     a_string = "test"
-    print locals()
+    print(locals())
 foo1()
 print(a_string)
 
@@ -72,7 +72,7 @@ print("=====Cut-off Line====\n")
 
 def outer3(x):
     def inner3():
-        print x
+        print(x)
     return inner3
 print1 = outer3(3)
 print2 = outer3(4)
