@@ -3,7 +3,8 @@ a = [1, 2, 3, 4, 5]
 print(type(a))
 a = iter(a)
 print(type(a))
-print(dir(a))
+for i in dir(a):
+    print(i)
 print(a.__iter__())
 print(a)
 print(a is a.__iter__())
