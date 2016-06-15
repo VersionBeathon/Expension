@@ -1,5 +1,6 @@
 # _*_ coding:utf-8 _*_
 # Python 函数式编程的基本单元
+from functools import reduce
 
 # lambda
 
@@ -59,7 +60,7 @@ print(map(square, [1, 2, 3, 4, 5]))
 
 def echo_IMP():
     while 1:
-        x = raw_input("IMP --")
+        x = input("IMP --")
         print(x)
         if x is 'quit':
             break
@@ -71,5 +72,5 @@ echo_IMP()
 def monadic_print(x):
     print(x)
     return(x)
-ehco_FP = lambda : monadic_print(raw_input("FP --")) is 'quit' or ehco_FP()
+ehco_FP = lambda: monadic_print(input("FP --")) is 'quit' or ehco_FP()
 
