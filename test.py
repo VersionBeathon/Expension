@@ -1,7 +1,8 @@
-d = {'title': 'python web site', 'url': 'http://www.python.org', 'spam': 0}
-print(d.items)
-it = d.iteritems()
-print(list(it))
-x = {'title': 'baidulaji'}
-d.update(x)
-print(d)
+# _*_ coding:utf-8 _*_
+import requests
+
+r = requests.get('http://www.sebastianblade.com')
+print(r.status_code)
+print(r.headers)
+print(r.cookies)
+print(r.history)
