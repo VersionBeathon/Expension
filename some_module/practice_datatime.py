@@ -9,11 +9,12 @@ print(dt)
 
 # 转换为unix时间戳
 
-print(dt.timestamp())
+print(now.timestamp())
 
 # 将unix时间戳转换为本地时间
 
-t = 12523461345.0
+
+t = 1467615839
 print(datetime.fromtimestamp(t))
 
 # 将unix时间戳转换为UTC标准时区的时间(格林威治)

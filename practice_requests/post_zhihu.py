@@ -11,13 +11,14 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36",
     "Referer": "https://www.zhihu.com/"
 }
-html = s.get('http://www.zhihu.com', headers=headers)
-print(html.text)
-print('\n')
+html = requests.get('http://www.zhihu.com/#sigin', headers=headers)
+print(html.cookies._now)
+picture_id = str(html.cookies._now)
 soup = BeautifulSoup(html.text, 'lxml')
 _xsrf = soup.findAll(type='hidden')[0]['value']
 print(_xsrf)
-captcha_url = 'http://www.zhihu.com/captcha.gif'
+captcha_url = 'https://www.zhihu.com/captcha.gif?r='+picture_id+'&type=login'
+print(captcha_url)
 captcha = s.get(captcha_url, stream=True, headers=headers)
 with open('captcha.gif', 'wb') as f:
     for line in captcha.iter_content(10):
@@ -28,14 +29,14 @@ captcha_str = input()
 print(captcha_str)
 login_data = {
     '_xsrf': _xsrf,
-    'password': '',
+    'password': 'password',
     'remember_me': 'true',
-    'phone_num': '',
+    'phone_num': 'username',
     'captcha': captcha_str
 }
-r = s.post('https://www.zhihu.com/#sigin', data=login_data, headers=headers)
+r = s.post('https://www.zhihu.com/login/phone_num', data=login_data, headers=headers)
 print(r.json())
-r = s.get('http://www.zhihu.com')
+r = s.get('https://www.zhihu.com', headers=headers)
 print(r.text)
 
-# 具体思路是正确的抓取不到正确的验证码 会有图片验证码跟文本验证码混编出现
+
