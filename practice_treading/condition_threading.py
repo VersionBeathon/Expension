@@ -4,6 +4,8 @@
 
 import time
 import threading
+import random
+
 queue = []
 
 con = threading.Condition()
@@ -30,8 +32,8 @@ class Consumer(threading.Thread):
     def run(self):
         while True:
             if con.acquire():
-                if len(queue) < 0
-                con.wait()
+                if len(queue) < 0:
+                    con.wait()
             else:
                 elem = queue.pop()
                 print("Consumer a elem {}. Now size is {}".format(elem, len(queue)))
