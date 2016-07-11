@@ -17,7 +17,7 @@ picture_id = str(html.cookies._now)
 soup = BeautifulSoup(html.text, 'lxml')
 _xsrf = soup.findAll(type='hidden')[0]['value']
 print(_xsrf)
-captcha_url = 'https://www.zhihu.com/captcha.gif?r='+picture_id+'&type=login'
+captcha_url = 'https://www.zhihu.com/captcha.gif?r=' + picture_id + '&type=login'
 print(captcha_url)
 captcha = s.get(captcha_url, stream=True, headers=headers)
 with open('captcha.gif', 'wb') as f:
@@ -29,9 +29,9 @@ captcha_str = input()
 print(captcha_str)
 login_data = {
     '_xsrf': _xsrf,
-    'password': 'password',
+    'password': 'smy1384578',
     'remember_me': 'true',
-    'phone_num': 'username',
+    'phone_num': '13166217194',
     'captcha': captcha_str
 }
 r = s.post('https://www.zhihu.com/login/phone_num', data=login_data, headers=headers)
