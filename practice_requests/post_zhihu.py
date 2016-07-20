@@ -29,9 +29,9 @@ captcha_str = input()
 print(captcha_str)
 login_data = {
     '_xsrf': _xsrf,
-    'password': 'smy1384578',
+    'password': 'yourpassword',
     'remember_me': 'true',
-    'phone_num': '13166217194',
+    'phone_num': 'yourphonenumber',
     'captcha': captcha_str
 }
 r = s.post('https://www.zhihu.com/login/phone_num', data=login_data, headers=headers)
