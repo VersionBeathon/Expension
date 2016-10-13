@@ -12,10 +12,10 @@ y = point(1, 4)
 z = point(3, 2)
 
 def judge(px, py):
-    point = [[1,1], [3,1] ,[2,3], [4,4]]
+    point = [[1,1], [3,1] ,[2,4], [4,4]]
     state = False
     for i in range(4):
-        for j in range(i+1):
+        for j in range(i+1, len(point)):
             sx = point[i][0]
             sy = point[i][1]
             tx = point[j][0]
@@ -27,10 +27,11 @@ def judge(px, py):
                 x = sx + (py - sy) * (tx - sx) / (ty - sy)
                 if x==px:
                     print('yes')
+                    break
                 if x > px:
                     state = not state
     if state == True:
         print('yes')
     else:
         print('no')
-judge(y.x, y.y)
+judge(z.x, z.y)
