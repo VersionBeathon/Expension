@@ -25,7 +25,7 @@ def judge(px, py):
                 break
             if (sy < py and ty >= py) or (sy >= py and ty < py):
                 x = sx + (py - sy) * (tx - sx) / (ty - sy)
-                if x==px:
+                if x == px:
                     print('yes')
                     break
                 if x > px:
